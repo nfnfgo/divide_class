@@ -18,7 +18,7 @@ def main(page: Page):
     glo_page = page
     page.title = '康康你的学号'
     page.vertical_alignment = "center"
-    stu_id = TextField(text_align="left", width=210, hint_text='请输入您的学号')
+    stu_id = TextField(text_align="left", width=210, hint_text='请输入您的学号',prefix=Text(value='E'))
     global glo_stu_id
     glo_stu_id = stu_id
     confirm_btn = FloatingActionButton(icon=icons.SEARCH, on_click=show_info)
@@ -32,7 +32,7 @@ def main(page: Page):
 def show_info(e):
     page: Page = glo_page
     stu_id: TextField = glo_stu_id
-    if (len(stu_id.value)!=9):
+    if (len(stu_id.value)!=8) or (stu_id.value.isdigit()==False):
         stu_id.value = ''
         stu_id.hint_text='学号不正确，请重新输入'
         page.update()
