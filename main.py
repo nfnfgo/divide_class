@@ -27,5 +27,5 @@ def main(page: Page):
     # home_page.build()
 
 
-flet.app(port=30005, target=main, view=flet.WEB_BROWSER, route_url_strategy="hash")
-# flet.app(port=30005, target=main)
+# flet.app(port=30005, target=main, view=flet.WEB_BROWSER, route_url_strategy="hash")
+flet.app(port=30005, target=main)

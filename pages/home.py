@@ -14,18 +14,17 @@ class HomePage(PageClass):
         self.page.vertical_alignment = "center"
         # set the Controls
         self.stu_id = TextField(text_align="left", width=210, hint_text='请输入您的学号', prefix=Text(value='E'))
-        confirm_btn = FloatingActionButton(icon=icons.SEARCH, on_click=self.show_info)
+        confirm_btn = ElevatedButton(icon=icons.SEARCH, on_click=self.show_info)
         row = Row(
             [self.stu_id, confirm_btn],
             alignment='center'
         )
-        servive_guide_btn = Container(ElevatedButton(text='新生生存指南', icon=icons.BOOK, on_click=self.go_guide), alignment=alignment.center)
-        # Set Views
+        servive_guide_btn = Container(ElevatedButton(text='新生生存指南', icon=icons.BOOK, on_click=self.go_guide,height=50,width=280), alignment=alignment.center)
         appbar = AppBar(title=Text(value='查询分班', style='titleMedium'),
                         center_title=False,
                         elevation=100,
-                        leading=IconButton(icon=icons.SEARCH, disabled=True),
-                        leading_width=25)
+                        leading=IconButton(icon=icons.SEARCH, disabled=True))
+        # Set Views
         view = View('/',
                     [row,
                      servive_guide_btn],

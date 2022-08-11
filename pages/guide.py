@@ -1,6 +1,5 @@
-from cgitb import text
 import flet
-from flet import IconButton, Page, Row, TextField, icons, ElevatedButton, FloatingActionButton, Text, View, AppBar, Tab, Tabs
+from flet import IconButton, Page, Row, TextField, icons, ElevatedButton, FloatingActionButton, Text, View, AppBar, Tab, Tabs, Container, alignment
 
 from services.page import PageClass
 import functions
@@ -9,14 +8,20 @@ import functions
 class GuidePage(PageClass):
     def build(self):
         # Declare Controls
-        appbar = AppBar(title=Text(value='新生生存指南', style='titleMedium'), elevation=100)
+        self.clean()
+        appbar = AppBar(title=Text(value='新生生存手册', style='titleMedium'), elevation=100)
         tabs = Tabs(selected_index=1,
                     animation_duration=300,
                     tabs=[
-                        Tab(text='综合', content=Text(value='This is a test')),
-                        Tab(text='宿舍', content=Text(value='宿舍'))
-                    ])
+                        Tab(text='综合', content=Container(content=get_guide_zonghe()))
+                    ],
+                    expand=1)
         # Declare View
         view = View('/guide', [tabs], appbar=appbar)
         self.page.views.append(view)
         self.update()
+
+
+# Content of Guide_综合
+def get_guide_zonghe():
+    return Container(content=Text(value='This is a testtttttttttttt'), alignment=alignment.top_left,margin=50)

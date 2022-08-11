@@ -22,8 +22,7 @@ class ShowInfoPage(PageClass):
         appbar = AppBar(title=Text(value='查询结果', style='titleMedium'),
                         center_title=False,
                         elevation=100,
-                        leading=IconButton(icon=icons.ARROW_BACK,on_click=home_page.build),
-                        leading_width=25)
+                        leading=IconButton(icon=icons.ARROW_BACK,on_click=home_page.build))
         view = View('/',
                     [Row([text], alignment='center'), Row([back_btn], alignment='center', vertical_alignment='end')],
                     appbar=appbar)
