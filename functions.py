@@ -7,7 +7,7 @@ def get_info(stu_id: str):
     stu_id = 'E'+stu_id
     # 计算各种数据
     # 专业
-    major = ['', '计算机科学与技术(共4个班)', '软件工程(共3个班)', '', '信息安全(共2个班)']
+    major = ['', '计算机科学与技术\n(共4个班)', '软件工程(共3个班)', '', '信息安全(共2个班)']
     try:
         stu_major = major[int(stu_id[1])]
     except:
